@@ -1,23 +1,23 @@
 # just for practice
 
-# Lena.js
+# lena-ts
 
 Tiny library for image processing.
 
-[![Codeclimate](https://codeclimate.com/github/davidsonfellipe/lena.js/badges/gpa.svg?style=flat)](https://codeclimate.com/github/davidsonfellipe/lena.js)
-[![MIT license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat)](https://davidsonfellipe.mit-license.org/)
-[![NPM](https://badgen.net/npm/v/lena.js)](https://www.npmjs.com/package/lena.js)
+[![Codeclimate](https://codeclimate.com/github/ahaoboy/lena-ts/badges/gpa.svg?style=flat)](https://codeclimate.com/github/ahaoboy/lena-ts)
+[![MIT license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat)](https://ahaoboy.mit-license.org/)
+[![NPM](https://badgen.net/npm/v/lena-ts)](https://www.npmjs.com/package/lena-ts)
 
 ## Install via NPM
 
 ```
-npm install lena.js --save
+npm install lena-ts --save
 ```
 
 ## Install via yarn
 
 ```
-yarn add lena.js
+yarn add lena-ts
 ```
 
 ## Run demo
@@ -55,18 +55,18 @@ yarn demo
 
 ## Author
 
-[![Davidson Fellipe](http://gravatar.com/avatar/054c583ad5dc09a861874e14dcb43e4c?s=70)](https://github.com/davidsonfellipe)
+[![Davidson Fellipe](http://gravatar.com/avatar/054c583ad5dc09a861874e14dcb43e4c?s=70)](https://github.com/ahaoboy)
 <br>
-[Davidson Fellipe](https://github.com/davidsonfellipe)
+[Davidson Fellipe](https://github.com/ahaoboy)
 
 ## Tutorials
 
-- [How to add image filters (photo effects) to images in the browser with JavaScript using Lena.js](https://ourcodeworld.com/articles/read/515/how-to-add-image-filters-photo-effects-to-images-in-the-browser-with-javascript-using-lena-js)
+- [How to add image filters (photo effects) to images in the browser with JavaScript using lena-ts](https://ourcodeworld.com/articles/read/515/how-to-add-image-filters-photo-effects-to-images-in-the-browser-with-javascript-using-lena-js)
 
 ## Contribute
 
-Anyone and everyone is welcome to contribute. See some [developers](https://github.com/davidsonfellipe/lena.js/graphs/contributors) that helped.
+Anyone and everyone is welcome to contribute. See some [developers](https://github.com/ahaoboy/lena-ts/graphs/contributors) that helped.
 
 ## License
 
-Code is under [MIT](http://davidsonfellipe.mit-license.org) license
+Code is under [MIT](http://ahaoboy.mit-license.org) license

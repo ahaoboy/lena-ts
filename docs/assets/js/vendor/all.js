@@ -1,7 +1,7 @@
 /*
  *  lena-js - v0.2.0
  *  Library for image processing
- *  https://github.com/davidsonfellipe/lena-js/
+ *  https://github.com/ahaoboy/lena-js/
  *
  *  Made by Davidson Fellipe
  *  Under MIT License
