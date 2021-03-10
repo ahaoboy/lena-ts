@@ -1,27 +1,72 @@
-# TSDX Bootstrap
+# just for practice
 
-This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
+# Lena.js
 
-## Local Development
+Tiny library for image processing.
 
-Below is a list of commands you will probably find useful.
+[![Codeclimate](https://codeclimate.com/github/davidsonfellipe/lena.js/badges/gpa.svg?style=flat)](https://codeclimate.com/github/davidsonfellipe/lena.js)
+[![MIT license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat)](https://davidsonfellipe.mit-license.org/)
+[![NPM](https://badgen.net/npm/v/lena.js)](https://www.npmjs.com/package/lena.js)
 
-### `npm start` or `yarn start`
+## Install via NPM
 
-Runs the project in development/watch mode. Your project will be rebuilt upon changes. TSDX has a special logger for you convenience. Error messages are pretty printed and formatted for compatibility VS Code's Problems tab.
+```
+npm install lena.js --save
+```
 
-<img src="https://user-images.githubusercontent.com/4060187/52168303-574d3a00-26f6-11e9-9f3b-71dbec9ebfcb.gif" width="600" />
+## Install via yarn
 
-Your library will be rebuilt if you make edits.
+```
+yarn add lena.js
+```
 
-### `npm run build` or `yarn build`
+## Run demo
 
-Bundles the package to the `dist` folder.
-The package is optimized and bundled with Rollup into multiple formats (CommonJS, UMD, and ES Module).
+```
+yarn demo
+```
 
-<img src="https://user-images.githubusercontent.com/4060187/52168322-a98e5b00-26f6-11e9-8cf6-222d716b75ef.gif" width="600" />
+## Demo
 
-### `npm test` or `yarn test`
+[https://fellipe.com/demos/lena-js/](https://fellipe.com/demos/lena-js/)
 
-Runs the test watcher (Jest) in an interactive mode.
-By default, runs tests related to files changed since the last commit.
+![Demo](https://user-images.githubusercontent.com/381179/32207948-b2dfcff8-bdd5-11e7-8c83-08b86a7616be.gif)
+
+## Current filters
+
+- Canny
+- Gaussian
+- Grayscale
+- Highpass
+- Invert
+- Laplacian
+- Mirror
+- Noise
+- Prewitt
+- RGB
+- Roberts
+- Saturation
+- Sepia
+- Sharpen
+- Sobel
+- Thresholding
+- Lowpass 3x3
+- Lowpass 5x5
+
+## Author
+
+[![Davidson Fellipe](http://gravatar.com/avatar/054c583ad5dc09a861874e14dcb43e4c?s=70)](https://github.com/davidsonfellipe)
+<br>
+[Davidson Fellipe](https://github.com/davidsonfellipe)
+
+## Tutorials
+
+- [How to add image filters (photo effects) to images in the browser with JavaScript using Lena.js](https://ourcodeworld.com/articles/read/515/how-to-add-image-filters-photo-effects-to-images-in-the-browser-with-javascript-using-lena-js)
+
+## Contribute
+
+Anyone and everyone is welcome to contribute. See some [developers](https://github.com/davidsonfellipe/lena.js/graphs/contributors) that helped.
+
+## License
+
+Code is under [MIT](http://davidsonfellipe.mit-license.org) license

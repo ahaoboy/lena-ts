@@ -12,6 +12,7 @@
   },
   "scripts": {
     "start": "tsdx watch",
+    "dev": "yarn start",
     "build": "tsdx build",
     "test": "tsdx test",
     "lint": "tsdx lint",
@@ -33,6 +34,7 @@
   "author": "ahaoboy",
   "module": "dist/lena-ts.esm.js",
   "devDependencies": {
+    "http-server": "^0.12.3",
     "husky": "^5.1.3",
     "tsdx": "^0.14.1",
     "tslib": "^2.1.0",
