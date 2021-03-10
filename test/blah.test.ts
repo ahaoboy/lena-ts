@@ -1,3 +1,5 @@
 import pipe from '../src/utils/pipe';
 import red from '../src/filters/red';
-pipe(document.createElement('canvas'), [[red, 0], red]);
+import invert from '../src/filters/invert';
+import brightness from '../src/filters/brightness';
+pipe(document.createElement('canvas'), [red, invert, [brightness, 10]]);

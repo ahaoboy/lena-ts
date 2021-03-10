@@ -1,8 +1,8 @@
-import { Filter } from '../type';
+import { FilterList } from '../type';
 import getImageData from './getImageData';
 const pipe = (
   input: HTMLCanvasElement | HTMLImageElement,
-  filters: Array<[Filter, number | undefined] | Filter | [Filter]>
+  filters: FilterList
 ) => {
   let imageData = getImageData(input);
   for (let item of filters) {

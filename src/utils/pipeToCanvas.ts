@@ -1,9 +1,9 @@
-import { Filter } from '../type';
 import printCanvas from './printCanvas';
+import { FilterList } from '../type';
 import pipe from './pipe';
 const pipeToCanvas = (
   input: HTMLCanvasElement | HTMLImageElement,
-  filters: [Filter, number | undefined][]
+  filters: FilterList
 ) => {
   const imageData = pipe(input, filters);
   const c = document.createElement('canvas');
