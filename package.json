@@ -19,6 +19,7 @@
     "test": "tsdx test",
     "lint": "tsdx lint",
     "demo": "tsdx build && http-server",
+    "pub": "npm publish",
     "prepare": "tsdx build"
   },
   "peerDependencies": {},
