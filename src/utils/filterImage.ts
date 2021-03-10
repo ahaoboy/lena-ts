@@ -6,7 +6,7 @@ const filterImage = (
   canvas: HTMLCanvasElement,
   filter: Filter,
   image: HTMLImageElement,
-  amount: number | undefined
+  amount?: number
 ) => {
   return printCanvas(canvas, filter(getImageData(image), amount));
 };
