@@ -41,4 +41,4 @@ export { default as histogram } from './utils/histogram';
 export { default as pipe } from './utils/pipe';
 export { default as pipeToCanvas } from './utils/pipeToCanvas';
 
-export * from './type';
+export { Filter, FilterList, Convolution, Kernel } from './type';
