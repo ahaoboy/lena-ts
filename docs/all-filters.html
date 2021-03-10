@@ -16,10 +16,9 @@
 
     <script type="module">
       import * as  LenaJS from "../dist/lena-ts.esm.js"
-      var image = document.getElementById('image')
-      var result = document.getElementById('result')
-
-      var filters = [
+      const image = document.getElementById('image')
+      const result = document.getElementById('result')
+      const filters = [
         { name: 'noise', amount: 200 },
         { name: 'noise', amount: 30 },
         { name: 'noise', amount: 10 },
@@ -58,7 +57,7 @@
         { name: 'sharpen', amount: 0 },
       ]
 
-      var canvas = document.getElementById('canvas')
+      const canvas = document.getElementById('canvas')
 
       let html = ''
       for (let i = 0; i < filters.length; i++) {

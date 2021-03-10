@@ -1,27 +1,26 @@
 const gradient = (deltaX: ImageData, deltaY: ImageData) => {
-  let srcX = deltaX.data,
-    canvasWidth = deltaX.width,
-    canvasHeight = deltaX.height,
-    srcY = deltaY.data,
-    temporaryCanvas = document.createElement('canvas'),
-    temporaryCtx = temporaryCanvas.getContext('2d')!,
-    outputData = temporaryCtx.createImageData(canvasWidth, canvasHeight),
-    outputDataDir = Array<number>(srcX.length).fill(0);
+  const srcX = deltaX.data;
+  const canvasWidth = deltaX.width;
+  const canvasHeight = deltaX.height;
+  const srcY = deltaY.data;
+  const outputData = new ImageData(canvasWidth, canvasHeight);
+  const { data } = outputData;
+  const outputDataDir = Array<number>(srcX.length).fill(0);
 
   for (let y = 0; y < canvasHeight; y++) {
     for (let x = 0; x < canvasWidth; x++) {
       let dstOff = (y * canvasWidth + x) * 4;
 
-      outputData.data[dstOff] = Math.sqrt(
+      data[dstOff] = Math.sqrt(
         Math.pow(srcX[dstOff], 2) + Math.pow(srcY[dstOff], 2)
       );
-      outputData.data[dstOff + 1] = Math.sqrt(
+      data[dstOff + 1] = Math.sqrt(
         Math.pow(srcX[dstOff + 1], 2) + Math.pow(srcY[dstOff + 1], 2)
       );
-      outputData.data[dstOff + 2] = Math.sqrt(
+      data[dstOff + 2] = Math.sqrt(
         Math.pow(srcX[dstOff + 2], 2) + Math.pow(srcY[dstOff + 2], 2)
       );
-      outputData.data[dstOff + 3] = 255;
+      data[dstOff + 3] = 255;
 
       outputDataDir[dstOff] = Math.atan2(srcY[dstOff], srcX[dstOff]);
       outputDataDir[dstOff + 1] = Math.atan2(

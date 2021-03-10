@@ -1,14 +1,12 @@
 import { Convolution } from '../type';
 const convolution: Convolution = function(pixels, kernel) {
-  let side = Math.round(Math.sqrt(kernel.length));
-  let halfSide = Math.floor(side / 2);
-  let src = pixels.data;
-  let canvasWidth = pixels.width;
-  let canvasHeight = pixels.height;
-  let temporaryCanvas = document.createElement('canvas');
-  let temporaryCtx = temporaryCanvas.getContext('2d')!;
-  let outputData = temporaryCtx.createImageData(canvasWidth, canvasHeight);
-
+  const side = Math.round(Math.sqrt(kernel.length));
+  const halfSide = Math.floor(side / 2);
+  const src = pixels.data;
+  const canvasWidth = pixels.width;
+  const canvasHeight = pixels.height;
+  const outputData = new ImageData(canvasWidth, canvasHeight);
+  const { data } = outputData;
   for (let y = 0; y < canvasHeight; y++) {
     for (let x = 0; x < canvasWidth; x++) {
       let dstOff = (y * canvasWidth + x) * 4,
@@ -37,10 +35,10 @@ const convolution: Convolution = function(pixels, kernel) {
         }
       }
 
-      outputData.data[dstOff] = sumReds;
-      outputData.data[dstOff + 1] = sumGreens;
-      outputData.data[dstOff + 2] = sumBlues;
-      outputData.data[dstOff + 3] = 255;
+      data[dstOff] = sumReds;
+      data[dstOff + 1] = sumGreens;
+      data[dstOff + 2] = sumBlues;
+      data[dstOff + 3] = 255;
     }
   }
   return outputData;

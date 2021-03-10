@@ -1,13 +1,11 @@
 const nonMaximumSuppression = (pixels: ImageData, direction: number[]) => {
-  let side = Math.round(Math.sqrt(25)),
-    halfSide = Math.floor(side / 2),
-    src = pixels.data,
-    canvasWidth = pixels.width,
-    canvasHeight = pixels.height,
-    temporaryCanvas = document.createElement('canvas'),
-    temporaryCtx = temporaryCanvas.getContext('2d')!,
-    outputData = temporaryCtx.createImageData(canvasWidth, canvasHeight);
-
+  const side = Math.round(Math.sqrt(25));
+  const halfSide = Math.floor(side / 2);
+  const src = pixels.data;
+  const canvasWidth = pixels.width;
+  const canvasHeight = pixels.height;
+  const outputData = new ImageData(canvasWidth, canvasHeight);
+  const { data } = outputData;
   for (let y = 0; y < canvasHeight; y++) {
     for (let x = 0; x < canvasWidth; x++) {
       let dstOff = (y * canvasWidth + x) * 4,
@@ -54,10 +52,10 @@ const nonMaximumSuppression = (pixels: ImageData, direction: number[]) => {
         }
       }
 
-      outputData.data[dstOff] = maxReds * 2;
-      outputData.data[dstOff + 1] = maxGreens * 2;
-      outputData.data[dstOff + 2] = maxBlues * 2;
-      outputData.data[dstOff + 3] = 255;
+      data[dstOff] = maxReds * 2;
+      data[dstOff + 1] = maxGreens * 2;
+      data[dstOff + 2] = maxBlues * 2;
+      data[dstOff + 3] = 255;
     }
   }
   return outputData;
