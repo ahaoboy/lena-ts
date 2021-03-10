@@ -1,4 +1,4 @@
-import { Filter } from './../type';
+import { Filter } from '../type';
 import getImageData from './getImageData';
 import printCanvas from './printCanvas';
 

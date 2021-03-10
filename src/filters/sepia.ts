@@ -1,4 +1,4 @@
-import { Filter } from './../type';
+import { Filter } from '../type';
 const sepia: Filter = pixels => {
   const { data } = pixels;
   for (let i = 0; i < data.length; i += 4) {

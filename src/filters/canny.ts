@@ -1,4 +1,4 @@
-import { Filter } from './../type';
+import { Filter } from '../type';
 import sobelHorizontal from './sobelHorizontal';
 import sobelVertical from './sobelVertical';
 import bigGaussian from './bigGaussian';

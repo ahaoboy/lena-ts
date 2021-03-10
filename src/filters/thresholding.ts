@@ -1,4 +1,4 @@
-import { Filter } from './../type';
+import { Filter } from '../type';
 const thresholding: Filter = (pixels, amount = 128) => {
   for (let i = 0; i < pixels.data.length; i += 4) {
     const r = pixels.data[i];

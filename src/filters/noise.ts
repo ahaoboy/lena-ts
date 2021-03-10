@@ -1,4 +1,4 @@
-import { Filter } from './../type';
+import { Filter } from '../type';
 const noise: Filter = (pixels, amount = 0) => {
   const level = amount * 255 * 0.1;
   for (let i = 0; i < pixels.data.length; i += 4) {

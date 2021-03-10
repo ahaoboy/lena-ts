@@ -1,4 +1,4 @@
-import { Filter } from './../type';
+import { Filter } from '../type';
 import convolution from '../operations/convolution';
 
 const laplacian: Filter = pixels => {

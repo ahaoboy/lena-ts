@@ -1,4 +1,4 @@
-import { Filter } from './../type';
+import { Filter } from '../type';
 import truncate from '../utils/truncate';
 const brightness: Filter = (pixels, amount = 0) => {
   const { data } = pixels;

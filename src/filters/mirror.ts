@@ -1,4 +1,4 @@
-import { Filter } from './../type';
+import { Filter } from '../type';
 const mirror: Filter = pixels => {
   let tmp = [];
   const width = pixels.width * 4;

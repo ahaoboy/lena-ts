@@ -1,4 +1,4 @@
-import { Filter } from './../type';
+import { Filter } from '../type';
 const green: Filter = pixels => {
   const { data } = pixels;
 

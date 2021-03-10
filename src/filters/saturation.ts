@@ -1,4 +1,4 @@
-import { Filter } from './../type';
+import { Filter } from '../type';
 const saturation: Filter = pixels => {
   const level = 2.9,
     RW = 0.3086,

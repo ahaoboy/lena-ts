@@ -1,4 +1,4 @@
-import { Filter } from './../type';
+import { Filter } from '../type';
 const contrast: Filter = (pixels, amount = 0) => {
   const level = Math.pow((amount + 100) / 100, 2);
   const { data } = pixels;
