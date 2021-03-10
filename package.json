@@ -1,15 +1,17 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "name": "lena-ts",
+  "author": "ahaoboy",
+  "description": "Library for image processing zero dependencies",
+  "homepage": "https://github.com/ahaoboy/lena-ts",
   "license": "MIT",
   "main": "dist/index.js",
+  "module": "dist/lena-ts.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
     "src"
   ],
-  "engines": {
-    "node": ">=10"
-  },
   "scripts": {
     "start": "tsdx watch",
     "dev": "yarn start",
@@ -20,6 +22,15 @@
     "prepare": "tsdx build"
   },
   "peerDependencies": {},
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
+    "http-server": "^0.12.3",
+    "husky": "^5.1.3",
+    "prettier": "^2.2.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.2.3"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -31,14 +42,30 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "lena-ts",
-  "author": "ahaoboy",
-  "module": "dist/lena-ts.esm.js",
-  "devDependencies": {
-    "http-server": "^0.12.3",
-    "husky": "^5.1.3",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.1.0",
-    "typescript": "^4.2.3"
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahaoboy/lena-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahaoboy/lena-ts/issues"
+  },
+  "keywords": [
+    "filter",
+    "image manipulation",
+    "image processing"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
