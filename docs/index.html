@@ -167,17 +167,16 @@
     <script src="assets/js/vendor/tooltip.js"></script>
     <script src="assets/js/vendor/utils.js"></script>
 
-    <!-- scripts for lib -->
-    <script src="../dist/browser.js"></script>
-
     <!-- scripts for runner -->
     <script src="assets/js/runner/config-chart.js"></script>
 
     <!-- scripts for runner -->
     <script type="module" src="assets/js/runner/runner.js"></script>
 
-    <script>
-        var _gaq = _gaq || []
+    <script type="module">
+      import * as  LenaJS from "../dist/lena-ts.esm.js"
+      window.LenaJS = LenaJS;
+      var _gaq = _gaq || []
         _gaq.push(['_setAccount', 'UA-2123552-1'])
         _gaq.push(['_trackPageview'])
             ; (function () {
