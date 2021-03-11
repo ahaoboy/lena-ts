@@ -57,6 +57,34 @@ export const filters = {
   bigGaussian,
   canny,
 };
+export {
+  invert,
+  contrast,
+  mirror,
+  red,
+  green,
+  blue,
+  brightness,
+  sepia,
+  saturation,
+  thresholding,
+  grayscale,
+  noise,
+  roberts,
+  lowpass3,
+  lowpass5,
+  highpass,
+  laplacian,
+  prewittVertical,
+  prewittHorizontal,
+  sharpen,
+  sobelVertical,
+  sobelHorizontal,
+  gaussian,
+  bigGaussian,
+  canny,
+};
+
 
 // utils
 export { default as convolution } from './operations/convolution';
@@ -69,5 +97,7 @@ export { default as histogram } from './utils/histogram';
 export { default as pipe } from './utils/pipe';
 export { default as pipeToCanvas } from './utils/pipeToCanvas';
 
+
+// type
 export * from './type';
 export type FilterName = keyof typeof filters;
