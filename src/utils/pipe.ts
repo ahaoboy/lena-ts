@@ -10,7 +10,7 @@ const pipe = (
       item = [item];
     }
     const [f, arg] = item;
-    return f(imageData, arg);
+    imageData = f(imageData, arg);
   }
   return imageData;
 };

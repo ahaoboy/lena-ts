@@ -1,5 +1,5 @@
 {
-  "version": "0.1.9",
+  "version": "0.1.10",
   "name": "lena-ts",
   "author": "ahaoboy",
   "description": "Library for image processing zero dependencies",
@@ -17,7 +17,7 @@
     "dev": "yarn start",
     "build": "tsdx build",
     "test": "tsdx test",
-    "lint": "tsdx lint",
+    "lint": "tsdx lint --write",
     "demo": "tsdx build && http-server",
     "pub": "npm publish",
     "prepare": "tsdx build"
@@ -68,5 +68,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "eslint-plugin-prettier": "^3.3.1"
   }
 }

@@ -1,34 +1,62 @@
-export { default as invert } from './filters/invert';
-export { default as contrast } from './filters/contrast';
-export { default as mirror } from './filters/mirror';
+import invert from './filters/invert';
+import contrast from './filters/contrast';
+import mirror from './filters/mirror';
 
 // RGB filters
-export { default as red } from './filters/red';
-export { default as green } from './filters/green';
-export { default as blue } from './filters/blue';
-export { default as brightness } from './filters/brightness';
+import red from './filters/red';
+import green from './filters/green';
+import blue from './filters/blue';
+import brightness from './filters/brightness';
 
-export { default as sepia } from './filters/sepia';
-export { default as saturation } from './filters/saturation';
+import sepia from './filters/sepia';
+import saturation from './filters/saturation';
 
-export { default as thresholding } from './filters/thresholding';
-export { default as grayscale } from './filters/grayscale';
-export { default as noise } from './filters/noise';
+import thresholding from './filters/thresholding';
+import grayscale from './filters/grayscale';
+import noise from './filters/noise';
 
 // with convolution
-export { default as roberts } from './filters/roberts';
-export { default as lowpass3 } from './filters/lowpass3';
-export { default as lowpass5 } from './filters/lowpass5';
-export { default as highpass } from './filters/highpass';
-export { default as laplacian } from './filters/laplacian';
-export { default as prewittVertical } from './filters/prewittVertical';
-export { default as prewittHorizontal } from './filters/prewittHorizontal';
-export { default as sharpen } from './filters/sharpen';
-export { default as sobelVertical } from './filters/sobelVertical';
-export { default as sobelHorizontal } from './filters/sobelHorizontal';
-export { default as gaussian } from './filters/gaussian';
-export { default as bigGaussian } from './filters/bigGaussian';
-export { default as canny } from './filters/canny';
+import roberts from './filters/roberts';
+import lowpass3 from './filters/lowpass3';
+import lowpass5 from './filters/lowpass5';
+import highpass from './filters/highpass';
+import laplacian from './filters/laplacian';
+import prewittVertical from './filters/prewittVertical';
+import prewittHorizontal from './filters/prewittHorizontal';
+import sharpen from './filters/sharpen';
+import sobelVertical from './filters/sobelVertical';
+import sobelHorizontal from './filters/sobelHorizontal';
+import gaussian from './filters/gaussian';
+import bigGaussian from './filters/bigGaussian';
+import canny from './filters/canny';
+
+export const filters = {
+  invert,
+  contrast,
+  mirror,
+  red,
+  green,
+  blue,
+  brightness,
+  sepia,
+  saturation,
+  thresholding,
+  grayscale,
+  noise,
+  roberts,
+  lowpass3,
+  lowpass5,
+  highpass,
+  laplacian,
+  prewittVertical,
+  prewittHorizontal,
+  sharpen,
+  sobelVertical,
+  sobelHorizontal,
+  gaussian,
+  bigGaussian,
+  canny,
+};
 
 // utils
 export { default as convolution } from './operations/convolution';
@@ -41,6 +69,5 @@ export { default as histogram } from './utils/histogram';
 export { default as pipe } from './utils/pipe';
 export { default as pipeToCanvas } from './utils/pipeToCanvas';
 
-// types, for vite
-import { Filter, FilterList, Convolution, Kernel } from './type';
-export { Filter, FilterList, Convolution, Kernel };
+export * from './type';
+export type FilterName = keyof typeof filters;
