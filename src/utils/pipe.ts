@@ -1,3 +1,5 @@
+import { filters as _filters } from './filters';
+import type { FilterName } from './filters';
 import { FilterList } from '../type';
 import getImageData from './getImageData';
 const pipe = (
@@ -9,7 +11,8 @@ const pipe = (
     if (!Array.isArray(item)) {
       item = [item];
     }
-    const [f, arg] = item;
+    let [f, arg] = item;
+    if (typeof f === 'string') f = _filters[f as FilterName];
     imageData = f(imageData, arg);
   }
   return imageData;
