@@ -1,10 +1,10 @@
 import { FilterList } from '../type';
 import getImageData from './getImageData';
 const pipe = (
-  input: HTMLCanvasElement | HTMLImageElement,
+  input: HTMLCanvasElement | HTMLImageElement | ImageData,
   filters: FilterList
 ) => {
-  let imageData = getImageData(input);
+  let imageData = input instanceof ImageData ? input : getImageData(input);
   for (let item of filters) {
     if (!Array.isArray(item)) {
       item = [item];
