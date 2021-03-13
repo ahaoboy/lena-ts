@@ -1,6 +1,8 @@
 # fork from lena.js
 [lena.js](https://github.com/davidsonfellipe/lena.js)
 
+Rewrite with ts, and add some functions
+
 # lena-ts
 
 Tiny library for image processing.
@@ -18,10 +20,16 @@ yarn add lena-ts
 ```
 
 ## pipe
+Support string list, you can use this function in WebWorker
 ```
 import { FilterList, pipe, red, invert, brightness } from '../src';
 const filterList: FilterList = [red, invert, [brightness, 10]];
-pipe(document.createElement('canvas'), filterList);
+
+// also work~
+const filterListStr: FilterList = ['red', 'invert', ['brightness', 10]];
+
+
+const imageData = pipe(document.createElement('canvas'), filterList);
 ```
 ## Run demo
 
