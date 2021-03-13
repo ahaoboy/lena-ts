@@ -1,5 +1,5 @@
 {
-  "version": "0.1.13",
+  "version": "0.1.14",
   "name": "lena-ts",
   "author": "ahaoboy",
   "description": "Library for image processing zero dependencies",
@@ -30,6 +30,7 @@
     "prettier": "^2.2.1",
     "tsdx": "^0.14.1",
     "tslib": "^2.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "typescript": "^4.2.3"
   },
   "husky": {
@@ -69,7 +70,5 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "dependencies": {
-    "eslint-plugin-prettier": "^3.3.1"
-  }
+  "dependencies": {}
 }

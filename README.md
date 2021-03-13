@@ -1,4 +1,5 @@
-# fork from lena.js just for practice
+# fork from lena.js
+[lena.js](https://github.com/davidsonfellipe/lena.js)
 
 # lena-ts
 
