@@ -1,10 +1,12 @@
+import getImageData from 'utils/getImageData';
 import { Convolution } from '../type';
-const convolution: Convolution = function(pixels, kernel) {
+const convolution: Convolution = function (pixels, kernel) {
+  const imageData = pixels instanceof ImageData ? pixels : getImageData(pixels);
   const side = Math.round(Math.sqrt(kernel.length));
   const halfSide = Math.floor(side / 2);
-  const src = pixels.data;
-  const canvasWidth = pixels.width;
-  const canvasHeight = pixels.height;
+  const src = imageData.data;
+  const canvasWidth = imageData.width;
+  const canvasHeight = imageData.height;
   const outputData = new ImageData(canvasWidth, canvasHeight);
   const { data } = outputData;
   for (let y = 0; y < canvasHeight; y++) {

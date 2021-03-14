@@ -28,7 +28,6 @@ const filterList: FilterList = [red, invert, [brightness, 10]];
 // also work~
 const filterListStr: FilterList = ['red', 'invert', ['brightness', 10]];
 
-
 const imageData = pipe(document.createElement('canvas'), filterList);
 ```
 ## Run demo
