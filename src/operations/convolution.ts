@@ -1,4 +1,4 @@
-import getImageData from 'utils/getImageData';
+import getImageData from '../utils/getImageData';
 import { Convolution } from '../type';
 const convolution: Convolution = function (pixels, kernel) {
   const imageData = pixels instanceof ImageData ? pixels : getImageData(pixels);
