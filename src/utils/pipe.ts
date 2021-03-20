@@ -1,4 +1,4 @@
-import { filters as _filters } from './filters';
+import { filters as Filters } from './filters';
 import type { FilterName } from './filters';
 import { FilterList } from '../type';
 import getImageData from './getImageData';
@@ -12,7 +12,7 @@ const pipe = (
       item = [item];
     }
     let [f, arg] = item;
-    if (typeof f === 'string') f = _filters[f as FilterName];
+    if (typeof f === 'string') f = Filters[f as FilterName];
     imageData = f(imageData, arg);
   }
   return imageData;
