@@ -42,6 +42,7 @@ export { default as histogram } from './utils/histogram';
 export { default as pipe } from './utils/pipe';
 export { default as pipeToCanvas } from './utils/pipeToCanvas';
 export { default as cloneImageData } from './utils/cloneImageData';
+export { default as truncate } from './utils/truncate';
 
 // type
 export * from './type';
