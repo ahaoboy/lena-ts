@@ -29,6 +29,7 @@ import sobelHorizontal from '../filters/sobelHorizontal';
 import gaussian from '../filters/gaussian';
 import bigGaussian from '../filters/bigGaussian';
 import canny from '../filters/canny';
+import cartoon from '../filters/cartoon';
 
 export const filters = {
   invert,
@@ -56,5 +57,6 @@ export const filters = {
   gaussian,
   bigGaussian,
   canny,
+  cartoon,
 };
 export type FilterName = keyof typeof filters;
