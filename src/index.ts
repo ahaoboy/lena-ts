@@ -41,6 +41,7 @@ export { default as redrawCanvas } from './utils/redrawCanvas';
 export { default as histogram } from './utils/histogram';
 export { default as pipe } from './utils/pipe';
 export { default as pipeToCanvas } from './utils/pipeToCanvas';
+export { default as cloneImageData } from './utils/cloneImageData';
 
 // type
 export * from './type';
