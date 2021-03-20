@@ -3,10 +3,11 @@ import truncate from '../utils/truncate';
 import grayscale from './grayscale';
 import bigGaussian from './bigGaussian';
 import canny from './canny';
+import cloneImageData from '../utils/cloneImageData'
 const cartoon: Filter = (pixels, amount = 125) => {
   const { width, height } = pixels;
   // don't use pipe,have cyclic dependencies problem
-  const imageEdge = bigGaussian(canny(bigGaussian(grayscale(pixels))));
+  const imageEdge = bigGaussian(canny(bigGaussian(grayscale(cloneImageData(pixels)))));
   const imageData = new ImageData(width, height);
   const outBuffer = imageData.data;
   const rawBuffer = pixels.data;
