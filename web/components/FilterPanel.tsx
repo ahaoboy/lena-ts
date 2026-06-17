@@ -1,10 +1,5 @@
 import { useState, useCallback } from "react";
-import Box from "@mui/material/Box";
-import Chip from "@mui/material/Chip";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
-import Button from "@mui/material/Button";
+import { Box, Chip, Stack, Typography, Divider, Button } from "@mui/material";
 import DeleteSweepIcon from "@mui/icons-material/DeleteSweep";
 
 export const FILTER_GROUPS: { label: string; filters: string[] }[] = [

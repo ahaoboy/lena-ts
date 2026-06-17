@@ -1,7 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import { useTheme } from "@mui/material/styles";
+import { Box, Typography, useTheme } from "@mui/material";
 import { histogram as computeHistogram } from "lena-ts";
 
 interface HistogramData {

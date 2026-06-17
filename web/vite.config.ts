@@ -4,7 +4,6 @@ import { visualizer } from "rollup-plugin-visualizer";
 
 const isDev = process.env["NODE_ENV"] === "development";
 
-// https://vite.dev/config/
 export default defineConfig({
   base: "/lena-ts/",
   plugins: [
@@ -21,7 +20,6 @@ export default defineConfig({
           "@mui/icons-material": "https://esm.sh/@mui/icons-material@9",
           "@emotion/react": "https://esm.sh/@emotion/react@11",
           "@emotion/styled": "https://esm.sh/@emotion/styled@11",
-          "@fontsource/roboto": "https://esm.sh/@fontsource/roboto",
         },
   },
 });
