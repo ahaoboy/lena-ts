@@ -25,26 +25,19 @@ const nonMaximumSuppression = (pixels: ImageData, direction: number[]) => {
             currentKernelX < canvasWidth
           ) {
             let offset = (currentKernelY * canvasWidth + currentKernelX) * 4,
-              currentKernelAngle = Math.atan2(
-                currentKernelY - y,
-                currentKernelX - x
-              );
+              currentKernelAngle = Math.atan2(currentKernelY - y, currentKernelX - x);
 
             maxReds =
-              src[offset] *
-                Math.abs(Math.cos(direction[dstOff] - currentKernelAngle)) >
-              maxReds
+              src[offset] * Math.abs(Math.cos(direction[dstOff] - currentKernelAngle)) > maxReds
                 ? 0
                 : maxReds;
             maxGreens =
-              src[offset + 1] *
-                Math.abs(Math.cos(direction[dstOff + 1] - currentKernelAngle)) >
+              src[offset + 1] * Math.abs(Math.cos(direction[dstOff + 1] - currentKernelAngle)) >
               maxGreens
                 ? 0
                 : maxGreens;
             maxBlues =
-              src[offset + 2] *
-                Math.abs(Math.cos(direction[dstOff + 2] - currentKernelAngle)) >
+              src[offset + 2] * Math.abs(Math.cos(direction[dstOff + 2] - currentKernelAngle)) >
               maxBlues
                 ? 0
                 : maxBlues;

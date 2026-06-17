@@ -1,6 +1,6 @@
-import getImageData from './getImageData';
+import getImageData from "./getImageData";
 
-const histogram = function(image: HTMLImageElement) {
+const histogram = function (image: HTMLImageElement | HTMLCanvasElement) {
   const pixels = getImageData(image);
   const size = 256;
   const histogramTemp = {

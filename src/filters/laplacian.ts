@@ -1,7 +1,7 @@
-import { Filter } from '../type';
-import convolution from '../operations/convolution';
+import { Filter } from "../type";
+import convolution from "../operations/convolution";
 
-const laplacian: Filter = pixels => {
+const laplacian: Filter = (pixels) => {
   const operator = [0, -1, 0, -1, 4, -1, 0, -1, 0];
 
   return convolution(pixels, operator);

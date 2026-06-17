@@ -1,9 +1,9 @@
-import { Filter } from '../type';
-import convolution from '../operations/convolution';
+import { Filter } from "../type";
+import convolution from "../operations/convolution";
 
-const gaussian: Filter = pixels => {
+const gaussian: Filter = (pixels) => {
   const divider = 16;
-  const operator = [1, 2, 1, 2, 4, 2, 1, 2, 1].map(i => i / divider);
+  const operator = [1, 2, 1, 2, 4, 2, 1, 2, 1].map((i) => i / divider);
   return convolution(pixels, operator);
 };
 

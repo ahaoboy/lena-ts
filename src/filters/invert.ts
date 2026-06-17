@@ -1,5 +1,5 @@
-import { Filter } from '../type';
-const invert: Filter = pixels => {
+import { Filter } from "../type";
+const invert: Filter = (pixels) => {
   const { data } = pixels;
   for (let i = 0; i < data.length; i += 4) {
     data[i] = 255 - data[i];

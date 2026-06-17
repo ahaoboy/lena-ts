@@ -1,5 +1,5 @@
-import { Filter } from '../type';
-const green: Filter = pixels => {
+import { Filter } from "../type";
+const green: Filter = (pixels) => {
   const { data } = pixels;
 
   for (let i = 0; i < data.length; i += 4) {

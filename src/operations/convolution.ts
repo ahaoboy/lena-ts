@@ -1,5 +1,5 @@
-import getImageData from '../utils/getImageData';
-import { Convolution } from '../type';
+import getImageData from "../utils/getImageData";
+import { Convolution } from "../type";
 const convolution: Convolution = function (pixels, kernel) {
   const imageData = pixels instanceof ImageData ? pixels : getImageData(pixels);
   const side = Math.round(Math.sqrt(kernel.length));

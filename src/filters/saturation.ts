@@ -1,5 +1,5 @@
-import { Filter } from '../type';
-const saturation: Filter = pixels => {
+import { Filter } from "../type";
+const saturation: Filter = (pixels) => {
   const level = 2.9,
     RW = 0.3086,
     RG = 0.6084,
@@ -15,18 +15,9 @@ const saturation: Filter = pixels => {
     RB2 = (1 - level) * RB + level;
 
   for (let i = 0; i < pixels.data.length; i += 4) {
-    pixels.data[i] =
-      RW0 * pixels.data[i] +
-      RG0 * pixels.data[i + 1] +
-      RB0 * pixels.data[i + 2];
-    pixels.data[i + 1] =
-      RW1 * pixels.data[i] +
-      RG1 * pixels.data[i + 1] +
-      RB1 * pixels.data[i + 2];
-    pixels.data[i + 2] =
-      RW2 * pixels.data[i] +
-      RG2 * pixels.data[i + 1] +
-      RB2 * pixels.data[i + 2];
+    pixels.data[i] = RW0 * pixels.data[i] + RG0 * pixels.data[i + 1] + RB0 * pixels.data[i + 2];
+    pixels.data[i + 1] = RW1 * pixels.data[i] + RG1 * pixels.data[i + 1] + RB1 * pixels.data[i + 2];
+    pixels.data[i + 2] = RW2 * pixels.data[i] + RG2 * pixels.data[i + 1] + RB2 * pixels.data[i + 2];
   }
 
   return pixels;

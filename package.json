@@ -1,74 +1,60 @@
 {
-  "version": "0.1.21",
   "name": "lena-ts",
-  "author": "ahaoboy",
+  "version": "0.1.21",
   "description": "Library for image processing zero dependencies",
-  "homepage": "https://github.com/ahaoboy/lena-ts",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/lena-ts.esm.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "scripts": {
-    "start": "tsdx watch",
-    "dev": "yarn start",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "lint": "tsdx lint --write",
-    "demo": "tsdx build && http-server",
-    "pub": "npm publish",
-    "prepare": "tsdx build"
-  },
-  "peerDependencies": {},
-  "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0",
-    "http-server": "^0.12.3",
-    "husky": "^5.1.3",
-    "prettier": "^2.2.1",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.1.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "typescript": "^4.2.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "engines": {
-    "node": ">=10"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ahaoboy/lena-ts.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ahaoboy/lena-ts/issues"
-  },
   "keywords": [
     "filter",
     "image manipulation",
     "image processing"
   ],
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
-    }
+  "homepage": "https://github.com/ahaoboy/lena-ts",
+  "bugs": {
+    "url": "https://github.com/ahaoboy/lena-ts/issues"
+  },
+  "license": "MIT",
+  "author": "ahaoboy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahaoboy/lena-ts.git"
+  },
+  "files": [
+    "esm",
+    "cjs",
+    "src"
   ],
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+  "sideEffects": false,
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "types": "./esm/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./esm/index.d.ts",
+      "import": "./esm/index.js",
+      "require": "./cjs/index.js",
+      "default": "./cjs/index.js"
     }
   },
-  "dependencies": {}
+  "scripts": {
+    "pre-check": "oxfmt && oxlint --fix",
+    "build:cjs": "tsc --outDir cjs --declaration false --module commonjs",
+    "build:esm": "tsc --outDir esm --module esnext",
+    "build": "npm run build:cjs && npm run build:esm",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build",
+    "dev": "cd web && npm run dev",
+    "build:web": "cd web && npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "25.9.3",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.1",
+    "globals": "^17.6.0",
+    "oxfmt": "0.55.0",
+    "oxlint": "1.70.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "typescript": "6.0.3",
+    "vite": "8.0.12"
+  }
 }

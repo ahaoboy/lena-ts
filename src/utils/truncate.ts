@@ -1,4 +1,4 @@
-const truncate = function(sum: number) {
+const truncate = function (sum: number) {
   if (sum < 0) {
     return 0;
   } else if (sum > 255) {
