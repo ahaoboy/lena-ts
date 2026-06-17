@@ -1,10 +1,8 @@
 import { Filter } from "../type";
 import convolution from "../operations/convolution";
 
-const sobelHorizontal: Filter = (pixels) => {
-  const divider = 4;
-  const operator = [1, 2, 1, 0, 0, 0, -1, -2, -1].map((i) => i / divider);
-  return convolution(pixels, operator);
-};
+const SOBEL_H = [1 / 4, 2 / 4, 1 / 4, 0, 0, 0, -1 / 4, -2 / 4, -1 / 4];
+
+const sobelHorizontal: Filter = (pixels) => convolution(pixels, SOBEL_H);
 
 export default sobelHorizontal;

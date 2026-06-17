@@ -1,11 +1,34 @@
 import convolution from "../operations/convolution";
 import { Filter } from "../type";
-const bigGaussian: Filter = (pixels) => {
-  const divider = 159;
-  const operator = [
-    2, 4, 5, 4, 2, 4, 9, 12, 9, 4, 5, 12, 15, 12, 5, 4, 9, 12, 9, 4, 2, 4, 5, 4, 2,
-  ].map((i) => i / divider);
-  return convolution(pixels, operator);
-};
+
+const BIG_GAUSSIAN_5X5 = [
+  2 / 159,
+  4 / 159,
+  5 / 159,
+  4 / 159,
+  2 / 159,
+  4 / 159,
+  9 / 159,
+  12 / 159,
+  9 / 159,
+  4 / 159,
+  5 / 159,
+  12 / 159,
+  15 / 159,
+  12 / 159,
+  5 / 159,
+  4 / 159,
+  9 / 159,
+  12 / 159,
+  9 / 159,
+  4 / 159,
+  2 / 159,
+  4 / 159,
+  5 / 159,
+  4 / 159,
+  2 / 159,
+];
+
+const bigGaussian: Filter = (pixels) => convolution(pixels, BIG_GAUSSIAN_5X5);
 
 export default bigGaussian;

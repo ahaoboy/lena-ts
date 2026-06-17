@@ -11,9 +11,9 @@ const gradient = (deltaX: ImageData, deltaY: ImageData) => {
     for (let x = 0; x < canvasWidth; x++) {
       let dstOff = (y * canvasWidth + x) * 4;
 
-      data[dstOff] = Math.sqrt(Math.pow(srcX[dstOff], 2) + Math.pow(srcY[dstOff], 2));
-      data[dstOff + 1] = Math.sqrt(Math.pow(srcX[dstOff + 1], 2) + Math.pow(srcY[dstOff + 1], 2));
-      data[dstOff + 2] = Math.sqrt(Math.pow(srcX[dstOff + 2], 2) + Math.pow(srcY[dstOff + 2], 2));
+      data[dstOff] = Math.hypot(srcX[dstOff], srcY[dstOff]);
+      data[dstOff + 1] = Math.hypot(srcX[dstOff + 1], srcY[dstOff + 1]);
+      data[dstOff + 2] = Math.hypot(srcX[dstOff + 2], srcY[dstOff + 2]);
       data[dstOff + 3] = 255;
 
       outputDataDir[dstOff] = Math.atan2(srcY[dstOff], srcX[dstOff]);

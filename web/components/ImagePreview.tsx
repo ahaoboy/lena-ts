@@ -6,6 +6,8 @@ import { filters } from "lena-ts";
 const PLACEHOLDER_URL =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect fill='%23ddd' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' dy='.3em' fill='%23999' font-family='sans-serif' font-size='18' text-anchor='middle'%3ELoad an image%3C/text%3E%3C/svg%3E";
 
+type FilterFn = (pixels: ImageData, amount?: number) => ImageData;
+
 interface ImagePreviewProps {
   imageUrl: string | null;
   activeFilters: string[];
@@ -24,14 +26,19 @@ export default function ImagePreview({
   const imgRef = useRef<HTMLImageElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [imgLoaded, setImgLoaded] = useState(false);
+  const prevLenRef = useRef(0);
+  const prevLastRef = useRef<string | null>(null);
 
   useEffect(() => {
     onCanvasReady(canvasRef.current);
     return () => onCanvasReady(null);
   }, [onCanvasReady]);
 
+  // Reset state on image change
   useEffect(() => {
     setImgLoaded(false);
+    prevLenRef.current = 0;
+    prevLastRef.current = null;
   }, [imageUrl]);
 
   useEffect(() => {
@@ -47,23 +54,47 @@ export default function ImagePreview({
     canvas.width = w;
     canvas.height = h;
 
-    ctx.drawImage(img, 0, 0, w, h);
+    const filterMap = filters as Record<string, FilterFn>;
+    const prevLen = prevLenRef.current;
+    const prevLast = prevLastRef.current;
+    const newLen = activeFilters.length;
 
-    if (activeFilters.length === 0) return;
+    // Detect incremental add: [A, B] → [A, B, C] (only one new at end)
+    const isIncrementalAdd = newLen === prevLen + 1 && activeFilters[newLen - 1] !== prevLast;
 
-    try {
-      const filterMap: Record<string, (pixels: ImageData, amount?: number) => ImageData> = filters;
-      for (const filterName of activeFilters) {
-        const filterFn = filterMap[filterName];
-        if (filterFn) {
+    if (newLen === 0) {
+      // Reset to original
+      ctx.drawImage(img, 0, 0, w, h);
+    } else if (isIncrementalAdd && prevLen > 0) {
+      // Incremental: apply only the last filter on top of current canvas state
+      const name = activeFilters[newLen - 1];
+      const fn = filterMap[name];
+      if (fn) {
+        try {
           const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-          const result = filterFn(imageData);
-          ctx.putImageData(result, 0, 0);
+          ctx.putImageData(fn(imageData), 0, 0);
+        } catch (err) {
+          console.error("Filter error:", err);
         }
       }
-    } catch (err) {
-      console.error("Filter application error:", err);
+    } else {
+      // Full recompute: draw original, then apply all filters in order
+      ctx.drawImage(img, 0, 0, w, h);
+      try {
+        for (const name of activeFilters) {
+          const fn = filterMap[name];
+          if (fn) {
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            ctx.putImageData(fn(imageData), 0, 0);
+          }
+        }
+      } catch (err) {
+        console.error("Filter application error:", err);
+      }
     }
+
+    prevLenRef.current = newLen;
+    prevLastRef.current = newLen > 0 ? activeFilters[newLen - 1] : null;
   }, [activeFilters, imgLoaded]);
 
   const handleDrop = useCallback(

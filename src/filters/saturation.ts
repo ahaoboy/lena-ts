@@ -13,11 +13,15 @@ const saturation: Filter = (pixels) => {
     RB0 = (1 - level) * RB,
     RB1 = (1 - level) * RB,
     RB2 = (1 - level) * RB + level;
+  const { data } = pixels;
 
-  for (let i = 0; i < pixels.data.length; i += 4) {
-    pixels.data[i] = RW0 * pixels.data[i] + RG0 * pixels.data[i + 1] + RB0 * pixels.data[i + 2];
-    pixels.data[i + 1] = RW1 * pixels.data[i] + RG1 * pixels.data[i + 1] + RB1 * pixels.data[i + 2];
-    pixels.data[i + 2] = RW2 * pixels.data[i] + RG2 * pixels.data[i + 1] + RB2 * pixels.data[i + 2];
+  for (let i = 0; i < data.length; i += 4) {
+    const r = data[i],
+      g = data[i + 1],
+      b = data[i + 2];
+    data[i] = RW0 * r + RG0 * g + RB0 * b;
+    data[i + 1] = RW1 * r + RG1 * g + RB1 * b;
+    data[i + 2] = RW2 * r + RG2 * g + RB2 * b;
   }
 
   return pixels;

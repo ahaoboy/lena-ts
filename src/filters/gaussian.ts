@@ -1,10 +1,8 @@
 import { Filter } from "../type";
 import convolution from "../operations/convolution";
 
-const gaussian: Filter = (pixels) => {
-  const divider = 16;
-  const operator = [1, 2, 1, 2, 4, 2, 1, 2, 1].map((i) => i / divider);
-  return convolution(pixels, operator);
-};
+const GAUSSIAN_3X3 = [1 / 16, 2 / 16, 1 / 16, 2 / 16, 4 / 16, 2 / 16, 1 / 16, 2 / 16, 1 / 16];
+
+const gaussian: Filter = (pixels) => convolution(pixels, GAUSSIAN_3X3);
 
 export default gaussian;
