@@ -6,7 +6,7 @@ const isDev = process.env["NODE_ENV"] === "development"
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/image-stitch/",
+  base: "/lena-ts/",
   plugins: [
     react(),
     ...(process.env["ANALYZE"] ? [visualizer({ open: true, gzipSize: true })] : []),
